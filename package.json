@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "next",
-    "build": "dotenv -e .env.local -- npx prisma generate && next build",
+    "build": "npx dotenv -e .env.local -- prisma generate && next build",
     "start": "next start"
   },
   "keywords": [],
@@ -22,6 +22,7 @@
   "devDependencies": {
     "@types/node": "17.0.14",
     "@types/react": "17.0.38",
+    "dotenv-cli": "^7.4.1",
     "prisma": "^5.11.0",
     "typescript": "^5.2.2"
   }
