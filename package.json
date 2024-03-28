@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "next",
-    "build": "npx dotenv -e .env.local -- prisma generate && next build",
+    "build": "prisma generate && next build",
+    "build-vercel": "npx dotenv -e .env.local -- prisma generate && next build",
     "start": "next start"
   },
   "keywords": [],
