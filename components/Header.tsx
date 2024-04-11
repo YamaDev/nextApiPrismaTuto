@@ -12,27 +12,25 @@ const Header: React.FC = () => {
 
     let left = (
         <div className="left">
-            <Link href="/">
-                <a className="bold" data-active={isActive('/')}>
+            <Link className="bold" href="/"  data-active={isActive('/')}>
                     Feed
-                </a>
             </Link>
             <style jsx>{`
         .bold {
           font-weight: bold;
         }
 
-        a {
+        Link {
           text-decoration: none;
           color: var(--geist-foreground);
           display: inline-block;
         }
 
-        .left a[data-active='true'] {
+        .left Link[data-active='true'] {
           color: gray;
         }
 
-        a + a {
+        Link + Link {
           margin-left: 1rem;
         }
       `}</style>
@@ -44,27 +42,25 @@ const Header: React.FC = () => {
     if (status === 'loading') {
         left = (
             <div className="left">
-                <Link href="/">
-                    <a className="bold" data-active={isActive('/')}>
+                <Link href="/" className="bold" data-active={isActive('/')}>
                         Feed
-                    </a>
                 </Link>
                 <style jsx>{`
           .bold {
             font-weight: bold;
           }
 
-          a {
+          Link {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
           }
 
-          .left a[data-active='true'] {
+          .left Link[data-active='true'] {
             color: gray;
           }
 
-          a + a {
+          Link + Link {
             margin-left: 1rem;
           }
         `}</style>
@@ -85,17 +81,17 @@ const Header: React.FC = () => {
     if (!session) {
         right = (
             <div className="right">
-                <Link href="/api/auth/signin">
-                    <a data-active={isActive('/signup')}>Log in</a>
+                <Link href="/api/auth/signin" data-active={isActive('/signup')}>
+                    Log in
                 </Link>
                 <style jsx>{`
-          a {
+        Link {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
           }
 
-          a + a {
+        Link + Link {
             margin-left: 1rem;
           }
 
@@ -116,30 +112,28 @@ const Header: React.FC = () => {
     if (session) {
         left = (
             <div className="left">
-                <Link href="/">
-                    <a className="bold" data-active={isActive('/')}>
+                <Link href="/" className="bold" data-active={isActive('/')}>
                         Feed
-                    </a>
                 </Link>
-                <Link href="/drafts">
-                    <a data-active={isActive('/drafts')}>My drafts</a>
+                <Link href="/drafts" data-active={isActive('/drafts')}>
+                    My drafts
                 </Link>
                 <style jsx>{`
           .bold {
             font-weight: bold;
           }
 
-          a {
+          Link {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
           }
 
-          .left a[data-active='true'] {
+          .left Link[data-active='true'] {
             color: gray;
           }
 
-          a + a {
+          Link + Link {
             margin-left: 1rem;
           }
         `}</style>
@@ -152,14 +146,14 @@ const Header: React.FC = () => {
                 </p>
                 <Link href="/create">
                     <button>
-                        <a>New post</a>
+                        New post
                     </button>
                 </Link>
                 <button onClick={() => signOut()}>
-                    <a>Log out</a>
+                    Log out
                 </button>
                 <style jsx>{`
-          a {
+                    Link {
             text-decoration: none;
             color: var(--geist-foreground);
             display: inline-block;
@@ -169,9 +163,8 @@ const Header: React.FC = () => {
             display: inline-block;
             font-size: 13px;
             padding-right: 1rem;
-          }
-
-          a + a {
+          }  
+        Link + Link {
             margin-left: 1rem;
           }
 
@@ -179,7 +172,7 @@ const Header: React.FC = () => {
             margin-left: auto;
           }
 
-          .right a {
+          .right Link {
             border: 1px solid var(--geist-foreground);
             padding: 0.5rem 1rem;
             border-radius: 3px;
